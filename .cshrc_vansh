@@ -59,3 +59,55 @@ alias grepc 'grep --color=always'
 #alias et 'exit'
 #alias lu 'll -rS'
 # replace all forward slashes ("/") with dots (".") - this is useful with pipes
+# i.e. Pipe the output of some other program into this to change slashes to dots...
+#alias s2d "sed 's/\//./g'"
+# and vice-versa
+#alias d2s "sed 's/\./\//g'"
+# see env vars NBPOOL, NBCLASS, NBQSLOT for defaults
+#alias nb_run 'nbq -s -n'
+#alias xnb_run 'nbq -C "SLES11SP2&&16G" -Q /extreme/shdk73/user -P fc_critical -s -n'
+#alias xnb_run64 'nbq -C "SLES11SP2&&16G" -Q /extreme/shdk73/user -P fc_critical -s -n'
+#alias nb_stat "nbqstat user=$USER"
+#alias xnb_stat "nbqstat -P fc_critical user=$USER"
+#alias nb_rm 'nbjob -t fc_normal remove '
+#alias xnb_rm 'nbjob -t fc_critical remove '
+
+#alias tinfo 'turnininfo -pending -c soc -s cdf-a0'
+#alias gk_info 'gkinfo -c soc -s cdf-a0 | less'
+#alias cd_gkdebug 'cd /p/cdf/lv/gk/debug/'
+#alias gkdirs 'gkinfo -dirs | less'
+
+alias .. "cd .."
+alias ..2 "cd ../.."
+alias ..3 "cd ../../.."
+alias ..4 "cd ../../../.."
+alias ..5 "cd ../../../../.."
+
+alias gst "git status"
+
+#alias nbst "nbstatus jobs --target"
+#alias nbrm "nbjob remove --target"
+#alias nbsc "nbst sc_critical"
+
+#alias nbtrex 'nbjob run --target sc_critical --qslot /SDG/sdg74/fe/build/nac --class "SLES11SP4&&64G" /p/hdk/rtl/proj_tools/proj_binx/shdk74/latest/trex'
+
+
+# Personal Shortcuts
+alias myhome "cd /nfs/site/disks/dcsg_0748/vanshpat"
+alias testb_rwc  'bman -dut rstw_rwc -mc rstw_rwc -s sglint -sched local -btb rstw_rwc:xpror'
+alias edit "vi .cshrc_vansh"
+alias verdi_rwc 'scripts/run_verdi.csh rstw_rwc &'
+alias f 'dolphin .'
+alias del 'rm -rf'
+
+#SAI Script ShortCuts
+#alias perl SAI 'perl sai_pg_reg_cov.pl -r /p/hdk/rtl/models/shdk74/gnrsp_io/gnrsp_io-srvr10nm-latest/regression'
+
+etenv WW `date +ww%V.%w`
+#setenv CDFWORK /p/cdf/lv/users/$USER
+#setenv CDF_MODEL_REPO $GIT_REPOS/soc
+#setenv CDF_SIP_RELEASES /p/hdk/rtl/ip_releases/shdk73/cdf/sip/
+#setenv CDF_HIP_RELEASES /p/hdk/rtl/ip_releases/shdk73/cdf/hip/
+#setenv PATH ${PATH}:$HOME/Utility:$HOME/bin:/nfs/site/disks/dcsg_0029/mpatel/MOHIT_CODE/Mohit_Scripts
+stty erase '^?'
+
