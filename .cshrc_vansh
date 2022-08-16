@@ -1,0 +1,61 @@
+##################################
+### Terminal Setup Files.      ###
+### Avoid PWD and Adds colors  ###
+##################################
+
+# -*-sh-*-
+#######################################################
+## Sample .bash_rc file by kds and others, 7/21/03
+#######################################################
+#wash -g srvr10nm srfio srfio_fe soc hdk10nm hdk10nmproc hdk7nm hdk7nmproc gnr74 gnr76 #-spt -- -c source "/p/hdk/rtl/hdk.rc -cfg shdk74"
+#source /p/hdk/rtl/hdk.rc -cfg shdk74
+# Exit immediately if this is non-interactive (rsh, etc.)
+if ( -z $?prompt) then
+exit
+endif
+
+setenv myname `whoami`
+setenv myhost `hostname`
+
+#################################################
+## Set environment variables
+#################################################
+#set -a
+
+# Define the editor of choice 
+setenv  VISUAL "/usr/intel/bin/vim"        # in-line command editor 
+setenv  FCEDIT "/usr/intel/bin/vim"        # editor for command history file
+setenv  EDITOR "/usr/intel/bin/vim"
+# Colors!
+set     red="%{\033[1;31m%}"
+set   green="%{\033[0;32m%}"
+set  yellow="%{\033[1;33m%}"
+set    blue="%{\033[1;34m%}"
+set magenta="%{\033[1;35m%}"
+set    cyan="%{\033[1;36m%}"
+set   white="%{\033[0;37m%}"
+set     end="%{\033[0m%}"
+
+set history = 100000
+set savehist = (100000 merge)
+
+# If Prompt is not set at all, this is not an interactive
+# shell and we should not mess with it.
+if (! -z "$?prompt") then
+            set prompt="${green}[${green}%~]${end} "
+endif
+#set PROMPT_COMMAND='echo -en "\033]0;$(whoami)@$(hostname)|$(pwd|cut -d "/" -f 4-100)\a"'
+setenv CVS_RSH ssh
+
+alias ls 'ls -F --color=auto'
+#alias lsc 'ls -F --color=always'
+alias ll 'ls -lF --color=auto'
+#alias llc 'ls -lF --color=always'
+#alias la 'll -a --color=auto'
+#alias lac 'll -a --color=always'
+alias grep 'grep --color=auto'
+alias grepc 'grep --color=always'
+#alias c 'clear'
+#alias et 'exit'
+#alias lu 'll -rS'
+# replace all forward slashes ("/") with dots (".") - this is useful with pipes
